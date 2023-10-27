@@ -8,6 +8,10 @@ def hofstadter_f_m(n: int) -> tuple:
     for i in range(n):
         yield (F(i), M(i))
 
-n = int(input())
-for item in hofstadter_f_m(n):
-    print(item, end=' ')
+while True:
+    try:
+        n = int(input())
+        for item in hofstadter_f_m(n):
+            print(item, end=' ')
+    except ValueError:
+        print('Несоответствие формата введенных данных')

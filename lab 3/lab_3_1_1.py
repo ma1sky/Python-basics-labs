@@ -1,8 +1,12 @@
 from functools import reduce
-def intersec(*lists: list) -> bool:
+def intersec(*lists: set) -> bool:
     interOfSets = reduce(lambda set1, set2: set1&set2, list(map(set, lists)))
-    return True if len(interOfSets) == 0 else False
-list1 = [1, 2, 3, 4 ,5 ]
-list2 = [1, 3, 4, 5, 6]
-list3 = [1, 3, 4, 7]
-print(intersec(list1, list2, list3))
+    return len(interOfSets) == 0
+
+while True:
+    try:
+        inStr = list(str(item) for item in input('Введите числовые множества : ').split(';'))
+        inData = list(map(lambda item: set(int(i) for i in item.split()), inStr))
+        print(intersec(*inData))
+    except ValueError:
+        print('Несоответствие формата данных')
