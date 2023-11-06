@@ -13,6 +13,6 @@ with open('lab 2/ip.log', 'r') as ipLogs:
     with open('lab 2/ip.solve', 'w') as ipSolve:
         for i in range(10000):
             comIp = ip.IPv6Address(ipLogs.readline().rstrip('\n'))
-            print(compareIps(comIp, userIp), file=ipSolve)
+            print(compareIps(comIp, userIp), fileIn=ipSolve)
     ipSolve.close()
 ipLogs.close()

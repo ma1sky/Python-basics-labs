@@ -9,10 +9,10 @@ while True:
 counter = 0
 for i in range(1, 101):
 
-    filePath = f'lab 2/example/file{i}.txt'
-    fileSize = int(os.path.getsize(filePath) / 1024)
+    fileInPath = f'lab 2/example/fileIn{i}.txt'
+    fileInSize = int(os.path.getsize(fileInPath) / 1024)
 
-    if left <= fileSize <= right:
+    if left <= fileInSize <= right:
         counter += 1
 
 print(counter)
